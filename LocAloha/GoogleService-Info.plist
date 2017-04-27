@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>29361824865-calhemvqk6u9fhhh95keacmno68opmjb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.29361824865-calhemvqk6u9fhhh95keacmno68opmjb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDDSBK_gWUm9F_G3V2Mtf8M2uKvtDpI6J8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>29361824865</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kindred.LocAloha</string>
+	<key>PROJECT_ID</key>
+	<string>localoha-28dd5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>localoha-28dd5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:29361824865:ios:ef5d5660a1bdb5fa</string>
+	<key>DATABASE_URL</key>
+	<string>https://localoha-28dd5.firebaseio.com</string>
+</dict>
+</plist>

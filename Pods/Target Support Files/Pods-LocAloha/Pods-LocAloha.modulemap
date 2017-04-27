@@ -1,0 +1,6 @@
+framework module Pods_LocAloha {
+  umbrella header "Pods-LocAloha-umbrella.h"
+
+  export *
+  module * { export * }
+}
