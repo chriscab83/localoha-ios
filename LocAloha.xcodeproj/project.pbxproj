@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		224294C29B39E9274AF78A5B /* Pods_LocAloha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00767F9F30F8523D07EF4C11 /* Pods_LocAloha.framework */; };
+		EBAA84431EBABDD2009F69B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBAA84421EBABDD2009F69B4 /* GoogleService-Info.plist */; };
 		EBD98B7F1EA30086000CB5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD98B7E1EA30086000CB5AA /* AppDelegate.swift */; };
 		EBD98B841EA30086000CB5AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD98B821EA30086000CB5AA /* Main.storyboard */; };
 		EBD98B861EA30086000CB5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD98B851EA30086000CB5AA /* Assets.xcassets */; };
 		EBD98B891EA30086000CB5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD98B871EA30086000CB5AA /* LaunchScreen.storyboard */; };
-		EBD98B911EA300A3000CB5AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBD98B901EA300A3000CB5AA /* GoogleService-Info.plist */; };
 		EBF7ACDB1EB199C500A655B0 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACD41EB199C500A655B0 /* MenuTableViewController.swift */; };
 		EBF7ACDC1EB199C500A655B0 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACD51EB199C500A655B0 /* NotificationsTableViewController.swift */; };
 		EBF7ACDD1EB199C500A655B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACD61EB199C500A655B0 /* ProfileViewController.swift */; };
@@ -29,6 +29,7 @@
 		B711A7B497C72F7332805731 /* Pods-LocAloha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocAloha.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocAloha/Pods-LocAloha.release.xcconfig"; sourceTree = "<group>"; };
 		CE9247D6ED1C5A8A5C203C47 /* Pods-LocAloha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocAloha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocAloha/Pods-LocAloha.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6FF7331EA532E5004267F7 /* LocAloha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocAloha.entitlements; sourceTree = "<group>"; };
+		EBAA84421EBABDD2009F69B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBC268751EB19D3A0056186D /* LocAloha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocAloha-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBD98B7B1EA30086000CB5AA /* LocAloha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocAloha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD98B7E1EA30086000CB5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		EBD98B851EA30086000CB5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBD98B881EA30086000CB5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD98B8A1EA30086000CB5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBD98B901EA300A3000CB5AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBF7ACD41EB199C500A655B0 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
 		EBF7ACD51EB199C500A655B0 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewController.swift; path = controllers/NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		EBF7ACD61EB199C500A655B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = controllers/ProfileViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			children = (
 				EBC268751EB19D3A0056186D /* LocAloha-Bridging-Header.h */,
 				EBD98B8A1EA30086000CB5AA /* Info.plist */,
-				EBD98B901EA300A3000CB5AA /* GoogleService-Info.plist */,
+				EBAA84421EBABDD2009F69B4 /* GoogleService-Info.plist */,
 				EB6FF7331EA532E5004267F7 /* LocAloha.entitlements */,
 			);
 			name = config;
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD98B891EA30086000CB5AA /* LaunchScreen.storyboard in Resources */,
-				EBD98B911EA300A3000CB5AA /* GoogleService-Info.plist in Resources */,
+				EBAA84431EBABDD2009F69B4 /* GoogleService-Info.plist in Resources */,
 				EBD98B861EA30086000CB5AA /* Assets.xcassets in Resources */,
 				EBD98B841EA30086000CB5AA /* Main.storyboard in Resources */,
 			);

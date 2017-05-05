@@ -12,7 +12,7 @@ import CoreLocation
 struct Post {
   
   let key: String
-  let ref: FIRDatabaseReference?
+  let ref: FIRDatabaseReference?  
   let location: CLLocation
   
   init(location: CLLocation, key: String = "") {
