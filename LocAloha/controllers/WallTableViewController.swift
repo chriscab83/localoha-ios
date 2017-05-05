@@ -79,13 +79,16 @@ class WallTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell") as! WallViewTableCell
         
-        print(self.posts[indexPath.row])
         
-        let post = posts[indexPath.row]
         
+        let post = posts[indexPath.row].toAnyObject() as! [String: AnyObject]
+        print(post["latitude"] )
         // Configure the cell...
         
-        cell.location?.text =  "\(post.location.coordinate.latitude), \(post.location.coordinate.longitude)"
+        let latitude = post["latitude"]!
+        let longitude = post["longitude"]!
+        
+        cell.location?.text =  "\(latitude), \(longitude)"
         
         return cell
     }
