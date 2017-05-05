@@ -8,7 +8,13 @@
 
 import UIKit
 
+class WallViewTableCell: UITableViewCell {
+    @IBOutlet weak var location: UILabel!
+}
+
 class WallTableViewController: UITableViewController {
+    
+    var posts: [Post] = []
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +25,23 @@ class WallTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        let ref = FIRDatabase.database().reference(withPath: "posts")
+
+        ref.observe(.value, with: { snapshot in
+            // 2
+            var newItems: [Post] = []
+            
+            // 3
+            for item in snapshot.children {
+                // 4
+                let post = Post(snapshot: item as! FIRDataSnapshot)
+                newItems.append(post)
+            }
+            
+            // 5
+            self.posts = newItems
+            self.tableView.reloadData()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +68,7 @@ class WallTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.colors.count
+        return self.posts.count
     }
     let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
     
@@ -56,10 +77,15 @@ class WallTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier:"WallTableViewCell") as UITableViewCell!
-        cell.backgroundColor = self.colors[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell") as! WallViewTableCell
+        
+        print(self.posts[indexPath.row])
+        
+        let post = posts[indexPath.row]
         
         // Configure the cell...
+        
+        cell.location?.text =  "\(post.location.coordinate.latitude), \(post.location.coordinate.longitude)"
         
         return cell
     }

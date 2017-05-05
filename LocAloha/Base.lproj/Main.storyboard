@@ -98,31 +98,30 @@
         <scene sceneID="zVR-V6-IxT">
             <objects>
                 <tableViewController id="wsL-wb-mCI" customClass="WallTableViewController" customModule="LocAloha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WallViewTableCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DTb-Zu-JLs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="DTb-Zu-JLs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WallTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="WallTableViewCell" textLabel="7Xe-hD-KRV" imageView="Ce2-ZA-PLa" rowHeight="90" style="IBUITableViewCellStyleDefault" id="ygJ-wf-5EP">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="75" id="ygJ-wf-5EP" customClass="WallViewTableCell" customModule="LocAloha" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygJ-wf-5EP" id="grN-0U-akk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Xe-hD-KRV">
-                                            <rect key="frame" x="46" y="0.0" width="314" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTP-rs-qUx">
+                                            <rect key="frame" x="47" y="8" width="137" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="extended.png" id="Ce2-ZA-PLa">
-                                            <rect key="frame" x="15" y="36" width="16" height="16"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="location" destination="eTP-rs-qUx" id="kpe-al-t2H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARi-b6-e9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="-1443"/>
+            <point key="canvasLocation" x="863" y="-1451"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="rab-Y2-mhj">
@@ -369,9 +368,6 @@
             <point key="canvasLocation" x="-1676" y="525.78710644677665"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="extended.png" width="16" height="16"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zbb-ky-HFe"/>
     </inferredMetricsTieBreakers>
