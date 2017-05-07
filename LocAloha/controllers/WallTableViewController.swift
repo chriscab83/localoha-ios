@@ -67,12 +67,8 @@ class WallTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.posts.count
     }
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
-    
-    let colors = [UIColor.blue, UIColor.yellow, UIColor.magenta, UIColor.red, UIColor.brown]
     
     
     
@@ -80,9 +76,8 @@ class WallTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell") as! WallViewTableCell
         
         let post = posts[indexPath.row].toAnyObject() as! [String: AnyObject]
-        print(post["latitude"] )
-        // Configure the cell...
         
+        // Configure the cell...
         let latitude = post["latitude"]!
         let longitude = post["longitude"]!
         
