@@ -8,10 +8,6 @@
 
 import UIKit
 
-class WallViewTableCell: UITableViewCell {
-  @IBOutlet weak var location: UILabel!
-}
-
 class MediaPostTableViewCell: UITableViewCell {
   @IBOutlet weak var userImageView: UIImageView!
   @IBOutlet weak var userLabel: UILabel!
@@ -19,6 +15,8 @@ class MediaPostTableViewCell: UITableViewCell {
   @IBOutlet weak var postDistanceLabel: UILabel!
   @IBOutlet weak var postContentLabel: UILabel!
   @IBOutlet weak var postImageView: UIImageView!
+  @IBOutlet weak var likeLabel: UILabel!
+  @IBOutlet weak var commentLabel: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()
