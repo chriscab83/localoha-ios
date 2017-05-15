@@ -75,6 +75,7 @@ PODS:
   - FirebaseStorage (1.1.0):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
+  - Font-Awesome-Swift (1.6.2)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -105,6 +106,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - Font-Awesome-Swift (~> 1.6.2)
 
 SPEC CHECKSUMS:
   AWSCore: 665371d51ccdfe62430c586e3cb8e57eff8ce09d
@@ -124,10 +126,11 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 753d05a925e9eb8eadd09a0ffc9b808578b72fac
   FirebaseRemoteConfig: af3003f4e8daa2bd1d5cf90d3cccc1fe224f8ed9
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
+  Font-Awesome-Swift: 4dc96df73b5f32aaccdee50a454c3ec253ee4977
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: b8552df7953c63f7c3871e0fe3bd0319bc91975e
+PODFILE CHECKSUM: 5a9e9f3c6fd6df3ece90036c8c601b0421ff8a4f
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

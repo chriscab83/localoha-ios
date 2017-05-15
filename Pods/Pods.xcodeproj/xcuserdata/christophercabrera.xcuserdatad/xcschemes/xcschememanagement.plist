@@ -34,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Font-Awesome-Swift-Font-Awesome-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Font-Awesome-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,32 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03E6E56F8533C2E42C696D7CCAC42910</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>14899DD2DE4794A659D6E3A53A2FE532</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>186D5B42FE179EC5031B824F56D9B6E3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>23BA9083ED0D2392A167A8AFA04427FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3FF40406E20452424F4795045D966178</key>
+		<key>3DD706841977DE04F441877787179F02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,42 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D0855EE5BB6FC03770C81F026FBAB4A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>61AF977C23DFB1506EEC7FDC5AACAB7E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6D5CEDECD3D8DC52EA507E0431BDA8A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7A2E4D63EC890268D8FDD9980B094BC2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A90AE166577A0C20B7CAA7381BF6A55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<key>9735AA72928D41DB06EA697E23930C72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9F7098779713B711F6C591B62A41F242</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA453546C51032641C49CACBC22725EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -143,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D81C9A57512D3FF12DF124AF200522BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
