@@ -101,4 +101,18 @@ class WallTableViewController: UITableViewController {
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
+    {
+        if editingStyle == .Delete
+        {
+            posts.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
 }
