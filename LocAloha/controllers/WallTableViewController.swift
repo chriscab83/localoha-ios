@@ -109,9 +109,9 @@ class WallTableViewController: UITableViewController {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
     {
-        if editingStyle == .Delete
+        if editingStyle == .delete
         {
-            posts.removeAtIndex(indexPath.row)
+            posts.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
     }
