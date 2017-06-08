@@ -18,6 +18,8 @@ class MediaPostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
+    var post: [String: AnyObject]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -95,6 +97,8 @@ class WallTableViewController: UITableViewController {
         // Configure the cell...
         let latitude = post["latitude"]!
         let longitude = post["longitude"]!
+        
+        
         
         cell.postDistanceLabel?.text =  "\(latitude), \(longitude)"
         cell.postContentLabel?.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni incidunt. Delectus, est!"
