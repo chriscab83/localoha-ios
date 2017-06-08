@@ -54,14 +54,17 @@ class WallTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         let sections = 1
         
-        //        let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-        //        noDataLabel.text          = "No data available"
-        //        noDataLabel.textColor     = UIColor.black
-        //        noDataLabel.textAlignment = .center
-        //        tableView.backgroundView  = noDataLabel
-        //        tableView.separatorStyle  = .none
-        tableView.backgroundColor = UIColor.lightGray
-        tableView.separatorStyle  = .none
+        if (self.posts.count > 0) {
+            tableView.backgroundColor = UIColor.lightGray
+            tableView.separatorStyle  = .none
+        } else {
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "No data available"
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
         
         return sections
     }
