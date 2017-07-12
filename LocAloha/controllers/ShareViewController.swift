@@ -33,11 +33,10 @@ class ShareViewController: UIViewController {
         let post = Post(latitude: latitude,longitude: longitude)
         // 3
         let postsRef = FIRDatabase.database().reference(withPath: "posts")
-        
-        let postRef = postsRef
+        let childRef = postsRef.child("post") // TODO: make this a unique id instead
         
         // 4
-        postRef.setValue(post.toAnyObject())
+        childRef.setValue(post.toAnyObject())
     }
 
     @IBOutlet weak var PostText: UITextView!
