@@ -42,7 +42,7 @@ class WallTableViewController: UITableViewController {
         
         let ref = FIRDatabase.database().reference(withPath:"posts")
         
-        ref.queryOrdered(byChild: "date").observe(.value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
             var newItems: [Post] = []
             
             for item in snapshot.children {
