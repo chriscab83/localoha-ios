@@ -40,9 +40,9 @@ class WallTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = FIRDatabase.database().reference(withPath: "posts")
+        let ref = FIRDatabase.database().reference(withPath:"posts")
         
-        ref.observe(.value, with: { snapshot in
+        ref.queryOrdered(byChild: "date").observe(.value, with: { snapshot in
             var newItems: [Post] = []
             
             for item in snapshot.children {
@@ -51,6 +51,7 @@ class WallTableViewController: UITableViewController {
             }
             
             self.posts = newItems
+            self.posts.sort(by: {$0.date as! Double > $1.date as! Double})
             self.tableView.reloadData()
         })
         
@@ -97,12 +98,21 @@ class WallTableViewController: UITableViewController {
         // Configure the cell...
         let latitude = post["latitude"]!
         let longitude = post["longitude"]!
+        let postText = post["postText"]!
+        let timestamp = post["date"] as! Double;
         
         
         
+        let date = Date(timeIntervalSince1970: (timestamp / 1000) )
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MMMM dd HH:mm a" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        
+        cell.postTimestampLabel?.text = "\(strDate)"
         cell.postDistanceLabel?.text =  "\(latitude), \(longitude)"
-        cell.postContentLabel?.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni incidunt. Delectus, est!"
-        
+        cell.postContentLabel?.text = "\(postText)"
         return cell
     }
     

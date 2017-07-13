@@ -28,15 +28,17 @@ class ShareViewController: UIViewController {
         // TODO: Get geo data
         let latitude: Double = 11.234
         let longitude: Double = 15.35
-        
+        let date = FIRServerValue.timestamp()
         // 2
-        let post = Post(latitude: latitude,longitude: longitude)
+        let post = Post(latitude: latitude,longitude: longitude, date: date, text: text!)
         // 3
         let postsRef = FIRDatabase.database().reference(withPath: "posts")
-        let childRef = postsRef.child("post") // TODO: make this a unique id instead
+        let postRef = postsRef.childByAutoId()
         
-        // 4
-        childRef.setValue(post.toAnyObject())
+        postRef.setValue(post.toAnyObject())
+        
+        let postId = postRef.key
+        print("new post id: \(postId)")
     }
 
     @IBOutlet weak var PostText: UITextView!
