@@ -16,19 +16,23 @@ struct Post {
   let date: Any
   let location: CLLocation
   let postText: String
+  let likes: Int
   
     init(location: CLLocation, text: String = "", key: String = "") {
     self.key = key
     self.ref = nil
     self.location = location
     self.postText = text
-    self.date = 0  }
+    self.date = 0
+    self.likes = 0
+    }
   
-    init(latitude: Double, longitude: Double, date: Any, text: String, key: String = "") {
+    init(latitude: Double, longitude: Double, date: Any, likes: Int = 0, text: String, key: String = "") {
     self.key = key
     self.ref = nil
     self.date = date
     self.postText = text
+    self.likes = likes
     self.location = CLLocation(latitude: latitude, longitude: longitude)
   }
   
@@ -40,6 +44,7 @@ struct Post {
     self.location = CLLocation(latitude: val["latitude"] as! Double, longitude: val["longitude"] as! Double)
     self.postText = val["postText"] as! String
     self.date = val["date"] as Any
+    self.likes = (val["likes"] != nil) ? val["likes"] as! Int : 0
   }
   
   func toAnyObject() -> Any {
@@ -47,7 +52,8 @@ struct Post {
       "date": date,
       "latitude":location.coordinate.latitude,
       "longitude":location.coordinate.longitude,
-      "postText":postText
+      "postText":postText,
+      "likes":likes
     ]
   }
   
