@@ -18,8 +18,8 @@ class MediaPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    
     @IBOutlet weak var likeButton: UIButton!
+    
     var post: [String: AnyObject]!
     
     override func awakeFromNib() {
@@ -38,9 +38,13 @@ class MediaPostTableViewCell: UITableViewCell {
 class WallTableViewController: UITableViewController {
     
     var posts: [Post] = []
+    let userID : String = (FIRAuth.auth()?.currentUser?.uid)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Current user ID is" + userID)
+
         
         let ref = FIRDatabase.database().reference(withPath:"posts")
         
@@ -61,7 +65,6 @@ class WallTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 100
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -91,11 +94,8 @@ class WallTableViewController: UITableViewController {
         return self.posts.count
     }
     
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"MediaPostCell") as! MediaPostTableViewCell
-        
         let post = posts[indexPath.row].toAnyObject() as! [String: AnyObject]
         
         // Configure the cell...
@@ -103,21 +103,27 @@ class WallTableViewController: UITableViewController {
         let longitude = post["longitude"]!
         let postText = post["postText"]!
         let timestamp = post["date"] as! Double
-        let likes = post["likes"] as! Int
-        
+        let likers = post["likers"] as! [String]
+        let likes = likers.count
         
         let date = Date(timeIntervalSince1970: (timestamp / 1000) )
         let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "EST") //Set timezone that you want
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST") // Change to local tz
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "MMMM dd HH:mm a" //Specify your format that you want
+        dateFormatter.dateFormat = "MMMM dd HH:mm a"
         let strDate = dateFormatter.string(from: date)
         
         cell.likeCount.text = (likes == 1) ? "\(likes) like" : "\(likes) likes"
+        
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(WallTableViewController.likePost(_:)), for: .touchUpInside)
+        
+        let liked = likers.contains(userID)
+        
+        liked ?
+        cell.likeButton.setTitle("Liked", for: .normal) :
+        cell.likeButton.setTitle("Like", for: .normal)
 
-        cell.post = post
         cell.postTimestampLabel?.text = "\(strDate)"
         cell.postDistanceLabel?.text =  "\(latitude), \(longitude)"
         cell.postContentLabel?.text = "\(postText)"
@@ -133,19 +139,38 @@ class WallTableViewController: UITableViewController {
         
         let cell = self.tableView.cellForRow(at: indexPath!)
         
-        
-        
         let post = posts[row]
         
-        updateLikeCount(cell: cell as! MediaPostTableViewCell, count: post.likes + 1)
+        var likers: [String] = post.likers
+        
+        var liked: Bool
+        
+        if (likers.contains(userID)) {
+            let idIndex = likers.index(of: userID)
+            
+            likers.remove(at: idIndex!)
+            liked = false
+        }else {
+            likers.append(self.userID)
+            liked = true
+        }
         
         post.ref?.updateChildValues([
-            "likes": post.likes + 1
-            ])
+                "likers": likers
+                ])
+            
+        updateLikeCount(cell: cell as! MediaPostTableViewCell, count: post.likers.count, liked: liked)
+        
+        
+        
     }
     
-    func updateLikeCount(cell: MediaPostTableViewCell, count: Int){
+    func updateLikeCount(cell: MediaPostTableViewCell, count: Int, liked: Bool){
         cell.likeCount.text = "\(count)"
+        liked ?
+        cell.likeButton.setTitle("Liked", for: .normal) :
+        cell.likeButton.setTitle("Like", for: .normal)
+
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: IndexPath) -> Bool

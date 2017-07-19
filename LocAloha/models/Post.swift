@@ -17,23 +17,26 @@ struct Post {
   let location: CLLocation
   let postText: String
   let likes: Int
+  let likers: [String]
   
     init(location: CLLocation, text: String = "", key: String = "") {
     self.key = key
     self.ref = nil
     self.location = location
     self.postText = text
-    self.date = 0
+    self.date = ""
     self.likes = 0
+    self.likers = []
     }
   
-    init(latitude: Double, longitude: Double, date: Any, likes: Int = 0, text: String, key: String = "") {
+    init(latitude: Double, longitude: Double, date: Any, likes: Int = 0, text: String, key: String = "", likers: [String] = []) {
     self.key = key
     self.ref = nil
     self.date = date
     self.postText = text
     self.likes = likes
     self.location = CLLocation(latitude: latitude, longitude: longitude)
+    self.likers = likers
   }
   
   init(snapshot: FIRDataSnapshot) {
@@ -45,6 +48,7 @@ struct Post {
     self.postText = val["postText"] as! String
     self.date = val["date"] as Any
     self.likes = (val["likes"] != nil) ? val["likes"] as! Int : 0
+    self.likers = (val["likers"] != nil) ? val["likers"] as! [String] : []
   }
   
   func toAnyObject() -> Any {
@@ -53,7 +57,8 @@ struct Post {
       "latitude":location.coordinate.latitude,
       "longitude":location.coordinate.longitude,
       "postText":postText,
-      "likes":likes
+      "likes":likers.count,
+      "likers": likers
     ]
   }
   
