@@ -104,7 +104,7 @@ class WallTableViewController: UITableViewController {
         let postText = post["postText"]!
         let timestamp = post["date"] as! Double
         let likers = post["likers"] as! [String]
-        let likes = likers.count
+        let likes = post["likes"] as! Int
         
         let date = Date(timeIntervalSince1970: (timestamp / 1000) )
         let dateFormatter = DateFormatter()
@@ -156,13 +156,10 @@ class WallTableViewController: UITableViewController {
         }
         
         post.ref?.updateChildValues([
-                "likers": likers
-                ])
+            "likers": likers
+        ])
             
         updateLikeCount(cell: cell as! MediaPostTableViewCell, count: post.likers.count, liked: liked)
-        
-        
-        
     }
     
     func updateLikeCount(cell: MediaPostTableViewCell, count: Int, liked: Bool){
