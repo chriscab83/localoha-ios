@@ -34,7 +34,7 @@ class SignupViewController: UIViewController {
             return
         }
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return

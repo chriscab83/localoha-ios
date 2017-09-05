@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		224294C29B39E9274AF78A5B /* Pods_LocAloha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00767F9F30F8523D07EF4C11 /* Pods_LocAloha.framework */; };
+		A0353613C77473EC58F3A6A8 /* Pods_LocAloha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D32708CBFB036EFCE315B0 /* Pods_LocAloha.framework */; };
 		EBAA84431EBABDD2009F69B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBAA84421EBABDD2009F69B4 /* GoogleService-Info.plist */; };
 		EBD98B7F1EA30086000CB5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD98B7E1EA30086000CB5AA /* AppDelegate.swift */; };
 		EBD98B841EA30086000CB5AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD98B821EA30086000CB5AA /* Main.storyboard */; };
@@ -22,11 +22,10 @@
 		EBF7ACE11EB199C500A655B0 /* WallTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACDA1EB199C500A655B0 /* WallTableViewController.swift */; };
 		EBF7ACE31EB199E400A655B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACE21EB199E400A655B0 /* User.swift */; };
 		EBF7ACE51EB19B0100A655B0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACE41EB19B0100A655B0 /* Post.swift */; };
-		FC5D3BF51EBC240900D97AF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5D3BF41EBC240900D97AF0 /* FBSDKCoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00767F9F30F8523D07EF4C11 /* Pods_LocAloha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocAloha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D32708CBFB036EFCE315B0 /* Pods_LocAloha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocAloha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B711A7B497C72F7332805731 /* Pods-LocAloha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocAloha.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocAloha/Pods-LocAloha.release.xcconfig"; sourceTree = "<group>"; };
 		CE9247D6ED1C5A8A5C203C47 /* Pods-LocAloha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocAloha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocAloha/Pods-LocAloha.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6FF7331EA532E5004267F7 /* LocAloha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocAloha.entitlements; sourceTree = "<group>"; };
@@ -47,7 +46,6 @@
 		EBF7ACDA1EB199C500A655B0 /* WallTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WallTableViewController.swift; path = controllers/WallTableViewController.swift; sourceTree = "<group>"; };
 		EBF7ACE21EB199E400A655B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = models/User.swift; sourceTree = "<group>"; };
 		EBF7ACE41EB19B0100A655B0 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = models/Post.swift; sourceTree = "<group>"; };
-		FC5D3BF41EBC240900D97AF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = build/Release/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224294C29B39E9274AF78A5B /* Pods_LocAloha.framework in Frameworks */,
-				FC5D3BF51EBC240900D97AF0 /* FBSDKCoreKit.framework in Frameworks */,
+				A0353613C77473EC58F3A6A8 /* Pods_LocAloha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +63,7 @@
 		90B33A2E4F775A47670FE58B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D3BF41EBC240900D97AF0 /* FBSDKCoreKit.framework */,
-				00767F9F30F8523D07EF4C11 /* Pods_LocAloha.framework */,
+				93D32708CBFB036EFCE315B0 /* Pods_LocAloha.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

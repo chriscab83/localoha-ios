@@ -21,7 +21,27 @@ class ShareViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func ShareButton(_ sender: Any) {
+        
+        let text = PostText.text
+        
+        // TODO: Get geo data
+        let latitude: Double = 11.234
+        let longitude: Double = 15.35
+        let date = ServerValue.timestamp()
+        // 2
+        let post = Post(latitude: latitude,longitude: longitude, date: date, text: text!)
+        // 3
+        let postsRef = Database.database().reference(withPath: "posts")
+        let postRef = postsRef.childByAutoId()
+        
+        postRef.setValue(post.toAnyObject())
+        
+        let postId = postRef.key
+        print("new post id: \(postId)")
+    }
 
+    @IBOutlet weak var PostText: UITextView!
     /*
     // MARK: - Navigation
 
