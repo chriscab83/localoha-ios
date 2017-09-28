@@ -110,7 +110,7 @@ class WallTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "EST") // Change to local tz
         dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "MMMM dd HH:mm a"
+        dateFormatter.dateFormat = "MMMM dd h:mm a"
         let strDate = dateFormatter.string(from: date)
         
         cell.likeCount.text = (likes == 1) ? "\(likes) like" : "\(likes) likes"
