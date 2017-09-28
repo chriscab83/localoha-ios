@@ -16,7 +16,6 @@ class MediaPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postDistanceLabel: UILabel!
     @IBOutlet weak var postContentLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
@@ -48,6 +47,9 @@ class WallTableViewController: UITableViewController {
         
         let ref = Database.database().reference(withPath:"posts")
         
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         ref.observe(.value, with: { snapshot in
             var newItems: [Post] = []
             
@@ -60,9 +62,6 @@ class WallTableViewController: UITableViewController {
             self.posts.sort(by: {$0.date as! Double > $1.date as! Double})
             self.tableView.reloadData()
         })
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +92,7 @@ class WallTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
-    
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"MediaPostCell") as! MediaPostTableViewCell
         let post = posts[indexPath.row].toAnyObject() as! [String: AnyObject]
