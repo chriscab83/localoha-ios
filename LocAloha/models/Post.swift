@@ -12,7 +12,7 @@ import CoreLocation
 struct Post {
   
   let key: String
-  let ref: FIRDatabaseReference?
+  let ref: DatabaseReference?
   let date: Any
   let location: CLLocation
   let postText: String
@@ -39,7 +39,7 @@ struct Post {
     self.likers = likers
   }
   
-  init(snapshot: FIRDataSnapshot) {
+  init(snapshot: DataSnapshot) {
     key = snapshot.key
     ref = snapshot.ref
     

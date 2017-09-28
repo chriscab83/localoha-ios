@@ -38,7 +38,7 @@ class MediaPostTableViewCell: UITableViewCell {
 class WallTableViewController: UITableViewController {
     
     var posts: [Post] = []
-    let userID : String = (FIRAuth.auth()?.currentUser?.uid)!
+    let userID : String = (Auth.auth().currentUser?.uid)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +46,13 @@ class WallTableViewController: UITableViewController {
         print("Current user ID is" + userID)
 
         
-        let ref = FIRDatabase.database().reference(withPath:"posts")
+        let ref = Database.database().reference(withPath:"posts")
         
         ref.observe(.value, with: { snapshot in
             var newItems: [Post] = []
             
             for item in snapshot.children {
-                let post = Post(snapshot: item as! FIRDataSnapshot)
+                let post = Post(snapshot: item as! DataSnapshot)
                 newItems.append(post)
             }
             

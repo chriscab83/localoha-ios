@@ -12,9 +12,9 @@ struct User {
   let uid: String
   let email: String
   
-  init(authData: FIRUser) {
+  init(authData: User) {
     uid = authData.uid
-    email = authData.email!
+    email = authData.email
   }
   
   init(uid: String, email: String) {

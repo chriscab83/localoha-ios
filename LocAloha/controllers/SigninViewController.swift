@@ -35,7 +35,7 @@ class SigninViewController: UIViewController {
       return
     }
     
-    FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+    Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
       if let error = error {
         print(error.localizedDescription)
         return
@@ -58,8 +58,8 @@ class SigninViewController: UIViewController {
         return
       }
       
-      let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-      FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+      let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+      Auth.auth().signIn(with: credential) { (user, error) in
         if let error = error {
           print(error.localizedDescription)
           return
